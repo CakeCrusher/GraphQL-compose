@@ -49,7 +49,6 @@ const resolvers = {
       if (context.authToken !== "secret") {
         throw new Error("Not authorized");
       }
-      pubsub.publish("USER_CREATED", { liveUsers: args });
       const response = await fetch("http://json-db:80/users", {
         headers: {
           "Content-Type": "application/json",
@@ -58,6 +57,7 @@ const resolvers = {
         body: JSON.stringify(args),
       });
       const user = await response.json();
+      pubsub.publish("USER_CREATED", { liveUsers: user });
       return user;
     },
   },

@@ -17,3 +17,12 @@ services:
       - 4000:4000
     volumes:
       - ./backend/:/usr/src/user-backend
+  frontend:
+    image: user-frontend
+    container_name: user-frontend
+    build:
+      context: ./user-frontend
+    ports:
+      - 3000:3000
+    volumes:
+      - ./user-frontend/:/usr/src/user-frontend
