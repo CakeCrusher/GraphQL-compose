@@ -1,0 +1,8 @@
+when there is scraping involved we need to create two requests
+  on for the instant db modification
+  the other for the scraped delayed db modification (update)
+when in production switch pubsub
+  https://www.apollographql.com/docs/apollo-server/data/subscriptions/#the-pubsub-class
+aim to use redis pubsub
+  https://github.com/davidyaha/graphql-redis-subscriptions
+  may need to add redis container

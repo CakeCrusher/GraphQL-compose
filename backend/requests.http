@@ -1,0 +1,28 @@
+# POST http://localhost:4000/graphql
+# Content-Type: application/json
+
+# {
+#   "query": "query RollDice($numDice: Int!, $numSides: Int){
+#   rollDice(numDice: $numDice, numSides: $numSides)
+# }",
+#   "variables": {
+#   "numDice": 2,
+#   "numSides": 4
+# }
+# }
+
+GET http://localhost:4000/graphql
+Content-Type: application/json
+
+
+{
+  "query": "mutation createUser($name: String!, $userId: Int!) {
+  createUser(name: $name, userId: $userId) {
+    name
+  }
+}",
+  "variables": {
+  "name": "sebas",
+  "userId": 123
+}
+}

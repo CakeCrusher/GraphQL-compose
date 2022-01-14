@@ -1,0 +1,9 @@
+GET http://localhost:4001/users?name=sebas7
+
+# POST http://localhost:4001/users
+# Content-Type: application/json
+
+# {
+#   "name": "John",
+#   "age": 20
+# }

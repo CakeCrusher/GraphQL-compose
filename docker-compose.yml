@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  db:
+    image: clue/json-server
+    container_name: json-db
+    ports:
+      - 4001:80
+    volumes:
+      - ./db/db.json:/data/db.json
+  backend:
+    image: user-backend
+    container_name: user-backend
+    build:
+      context: ./backend
+    ports:
+      - 4000:4000
+    volumes:
+      - ./backend/:/usr/src/user-backend
